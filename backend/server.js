@@ -13,7 +13,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-mongoose.connect('mongodb+srv://nmart:nmart@cluster0.zcplx.mongodb.net/nmart?retryWrites=true&w=majority' , {
+mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/Angadi', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
